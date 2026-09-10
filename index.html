@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, My Angel ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #08040a;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 60, 130, .18), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(170, 50, 255, .15), transparent 30%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 20px;
+    animation: float 8s linear infinite;
+    opacity: .7;
+    z-index: 5;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: .8;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    animation: fadeIn 2s ease;
+}
+
+.small-title {
+    color: #ff82ad;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(48px, 12vw, 100px);
+    line-height: .95;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #fff, #ff8fb5, #d89cff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff477e, #b44cff);
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    box-shadow: 0 10px 35px rgba(255, 50, 120, .25);
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+/* Sections */
+section {
+    padding: 90px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: #ff78a5;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    font-size: clamp(32px, 7vw, 55px);
+    margin-top: 10px;
+}
+
+/* Letter */
+.letter {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 25px;
+    padding: 35px;
+    line-height: 2;
+    color: #ddd;
+    box-shadow: 0 20px 70px rgba(0,0,0,.3);
+}
+
+.letter p {
+    margin-bottom: 20px;
+}
+
+.signature {
+    color: #ff8db4;
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+/* Reasons */
+.reasons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 30px 22px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.08);
+    text-align: center;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    background: rgba(255,255,255,.08);
+}
+
+.card .emoji {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* Surprise */
+.surprise {
+    text-align: center;
+}
+
+.gift {
+    font-size: 90px;
+    cursor: pointer;
+    display: inline-block;
+    animation: bounce 1.5s infinite;
+    margin: 20px;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(-12px) rotate(4deg);
+    }
+}
+
+.hidden-message {
+    display: none;
+    background: rgba(255, 72, 130, .08);
+    border: 1px solid rgba(255, 100, 150, .2);
+    padding: 30px;
+    border-radius: 20px;
+    line-height: 1.8;
+    animation: fadeIn 1s ease;
+}
+
+.hidden-message.show {
+    display: block;
+}
+
+/* Final */
+.final {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.final h2 {
+    font-size: clamp(42px, 10vw, 80px);
+    background: linear-gradient(135deg, #fff, #ff79a8);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.final p {
+    color: #bbb;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-content">
+        <div class="small-title">A Special Day For Someone Special</div>
+
+        <h1>Happy Birthday,<br>My Angel ❤️</h1>
+
+        <p>
+            Today isn't just another day.
+            Today is the day the world was blessed with you.
+            And I'm so grateful that my world got to find you.
+        </p>
+
+        <a href="#letter" class="btn">Open Your Birthday Surprise 💌</a>
+    </div>
+</div>
+
+<!-- LETTER -->
+<section id="letter">
+    <div class="section-title">
+        <span>From My Heart</span>
+        <h2>A Letter For You 💕</h2>
+    </div>
+
+    <div class="letter">
+        <p>
+            My love,
+        </p>
+
+        <p>
+            Happy birthday to the most beautiful person in my world.
+            I want you to know how special you are to me and how grateful
+            I am to have you in my life.
+        </p>
+
+        <p>
+            You bring happiness into my life in ways I cannot always explain.
+            Your smile, your heart, your kindness and even the little things
+            you do mean more to me than you know.
+        </p>
+
+        <p>
+            On your birthday, I pray that this new chapter brings you
+            happiness, success, peace and everything your heart desires.
+        </p>
+
+        <p>
+            I hope this little website reminds you of just how loved you are.
+            You deserve beautiful things, beautiful moments and a beautiful life.
+        </p>
+
+        <div class="signature">
+            Forever yours ❤️
+        </div>
+    </div>
+</section>
+
+<!-- REASONS -->
+<section>
+    <div class="section-title">
+        <span>Just A Few Things</span>
+        <h2>Why I Love You ❤️</h2>
+    </div>
+
+    <div class="reasons">
+
+        <div class="card">
+            <div class="emoji">🥰</div>
+            <h3>Your Smile</h3>
+            <p>
+                Your smile has a way of making even an ordinary day feel special.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">❤️</div>
+            <h3>Your Heart</h3>
+            <p>
+                You have a beautiful heart, and that is one of the things I cherish most about you.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">✨</div>
+            <h3>Your Energy</h3>
+            <p>
+                You bring a special kind of light wherever you go.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">💍</div>
+            <h3>Us</h3>
+            <p>
+                Out of all the people in this world, I'm grateful that our paths crossed.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SURPRISE -->
+<section class="surprise">
+
+    <div class="section-title">
+        <span>One More Thing...</span>
+        <h2>There's A Surprise 🎁</h2>
+    </div>
+
+    <div class="gift" onclick="openGift()">🎁</div>
+
+    <p style="color:#aaa; margin-bottom:25px;">
+        Tap the gift ❤️
+    </p>
+
+    <div id="message" class="hidden-message">
+        <h3 style="font-size:28px; margin-bottom:15px;">
+            You are my favorite person. ❤️
+        </h3>
+
+        <p>
+            No matter where life takes us, I hope we continue creating
+            beautiful memories together.
+        </p>
+
+        <p style="margin-top:15px;">
+            Happy Birthday, My Angel. 🎂💕
+        </p>
+    </div>
+
+</section>
+
+<!-- FINAL -->
+<div class="final">
+    <div>
+        <h2>I Love You ❤️</h2>
+        <p>
+            Happy Birthday, my beautiful angel.<br>
+            Today, tomorrow and always.
+        </p>
+    </div>
+</div>
+
+<footer>
+    Made with ❤️ especially for you.
+</footer>
+
+<script>
+
+/* Gift */
+function openGift() {
+    document.getElementById("message").classList.toggle("show");
+
+    createHearts();
+}
+
+/* Floating hearts */
+function createHearts() {
+
+    for (let i = 0; i < 15; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+        heart.innerHTML = ["❤️","💕","💖","💗","💓"][Math.floor(Math.random()*5)];
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+        heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 10000);
+    }
+}
+
+/* Start some hearts */
+setInterval(createHearts, 3500);
+
+</script>
+
+</body>
+</html>
